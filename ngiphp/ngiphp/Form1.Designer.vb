@@ -229,7 +229,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button1)
         Me.MaximizeBox = False
         Me.Name = "Form1"
-        Me.Text = "Nginx+PHP+MySQL"
+        Me.Text = "Nginx+PHP+MySQL管理器"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
