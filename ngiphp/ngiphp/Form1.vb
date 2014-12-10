@@ -62,6 +62,11 @@
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If UBound(Diagnostics.Process.GetProcessesByName(Diagnostics.Process.GetCurrentProcess.ProcessName)) > 0 Then
+            MessageBox.Show("程序已经运行了")
+            End
+        End If
+
         Label1.Text = "Nginx: "
         Label2.Text = "PHP 5: "
         Label3.Text = "MySQL: "
@@ -123,7 +128,8 @@
         'TextBox2.Text = "d:\nginx\php52\"
         'My.Settings.php = 52
         'My.Settings.Save()
-        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).Parent.Parent.Parent.Parent.FullName
+
+        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "52" + "\"
         TextBox2.Text = p
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
@@ -133,7 +139,7 @@
         'TextBox2.Text = "d:\nginx\php53\"
         'My.Settings.php = 53
         'My.Settings.Save()
-        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).Parent.Parent.Parent.Parent.FullName
+        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "53" + "\"
         TextBox2.Text = p
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
@@ -143,7 +149,7 @@
         'TextBox2.Text = "d:\nginx\php54\"
         'My.Settings.php = 54
         'My.Settings.Save()
-        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).Parent.Parent.Parent.Parent.FullName
+        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "54" + "\"
         TextBox2.Text = p
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
@@ -153,7 +159,7 @@
         'TextBox2.Text = "d:\nginx\php55\"
         'My.Settings.php = 55
         'My.Settings.Save()
-        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).Parent.Parent.Parent.Parent.FullName
+        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "55" + "\"
         TextBox2.Text = p
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
@@ -163,7 +169,7 @@
         'TextBox2.Text = "d:\nginx\php56\"
         'My.Settings.php = 56
         'My.Settings.Save()
-        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).Parent.Parent.Parent.Parent.FullName
+        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "56" + "\"
         TextBox2.Text = p
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
