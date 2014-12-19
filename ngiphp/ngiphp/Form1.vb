@@ -1,11 +1,13 @@
 ﻿Public Class Form1
-
-
+    Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, ByVal lpsz2 As String) As Long
+    Declare Function ShowWindow Lib "user32" Alias "ShowWindow" (ByVal hWnd1 As Long, ByVal nCmdShow As String) As Long
     Dim n As Process = Nothing
 
     Dim p As Process = Nothing
 
     Dim m As Process = Nothing
+
+    Dim c As Process = Nothing
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If IsNothing(n) = True Then
@@ -29,26 +31,32 @@
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If IsNothing(p) = True Then
+        Try
+            If IsNothing(p) = True Then
 
-            p = New Process
-            p.StartInfo.FileName = "php-cgi.exe"
-            p.StartInfo.WorkingDirectory = TextBox2.Text
-            p.StartInfo.CreateNoWindow = True
-            p.StartInfo.Arguments = "-b 127.0.0.1:9000"
-            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
-            p.Start()
+                p = New Process
+                p.StartInfo.FileName = "php-cgi.exe"
+                p.StartInfo.WorkingDirectory = TextBox2.Text
+                p.StartInfo.CreateNoWindow = True
+                p.StartInfo.Arguments = "-b 127.0.0.1:9000"
+                p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+                p.Start()
 
-            Label2.Text = Label2.Text + p.Id.ToString
-            Label2.ForeColor = Color.Green
-        Else
+                Label2.Text = Label2.Text + p.Id.ToString
+                Label2.ForeColor = Color.Green
+            Else
 
-            Label2.ForeColor = Color.Red
-            Label2.Text = "PHP 5: "
-            Process.Start("taskkill.exe", "/im php-cgi.exe /f")
-            p.Kill()
+                Label2.ForeColor = Color.Red
+                Label2.Text = "PHP 5: "
+                Process.Start("taskkill.exe", "/im php-cgi.exe /f")
+                p.Kill()
+                p = Nothing
+            End If
+        Catch ex As ArgumentException
             p = Nothing
-        End If
+        Finally
+
+        End Try
     End Sub
 
 
@@ -70,6 +78,7 @@
         Label1.Text = "Nginx: "
         Label2.Text = "PHP 5: "
         Label3.Text = "MySQL: "
+        Label4.Text = "Memcached: "
         'Select Case My.Settings.php
         '    Case 52
         '        RadioButton1.Select()
@@ -89,9 +98,12 @@
 
         Dim m = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\m.txt")
 
+        Dim c = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\c.txt")
+
         TextBox1.Text = d
         TextBox2.Text = p
         TextBox3.Text = m
+        TextBox4.Text = c
 
         If (p.Contains("php52") = True) Then RadioButton1.Select()
         If (p.Contains("php53") = True) Then RadioButton2.Select()
@@ -191,4 +203,26 @@
         Me.Show()
         Me.WindowState = FormWindowState.Normal
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If IsNothing(c) = True Then
+            c = New Process
+            c.StartInfo.FileName = "memcached.exe"
+            c.StartInfo.WorkingDirectory = TextBox4.Text
+            'n.StartInfo.CreateNoWindow = True
+            c.StartInfo.Arguments = ""
+            c.Start()
+            'n.WaitForExit()
+            Label4.Text = Label4.Text + c.Id.ToString
+            Label4.ForeColor = Color.Green
+            ShowWindow(c.MainWindowHandle, 0)
+        Else
+            Label4.ForeColor = Color.Red
+            Label4.Text = "Memcached: "
+            Process.Start("taskkill", "/im memcached.exe /f")
+            c = Nothing
+        End If
+    End Sub
+
+
 End Class
