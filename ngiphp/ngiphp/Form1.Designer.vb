@@ -216,7 +216,7 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("宋体", 32.0!)
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(26, 300)
+        Me.Label4.Location = New System.Drawing.Point(21, 297)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(151, 43)
         Me.Label4.TabIndex = 14

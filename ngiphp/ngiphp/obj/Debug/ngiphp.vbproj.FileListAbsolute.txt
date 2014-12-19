@@ -21,10 +21,14 @@ D:\inetpub\zbphp\ngiphp\ngiphp\obj\Debug\ngiphp.vbproj.GenerateResource.Cache
 D:\nginx\ngiphp\ngiphp\obj\Debug\ngiphp.Form1.resources
 D:\nginx\ngiphp\ngiphp\obj\Debug\ngiphp.Resources.resources
 D:\nginx\ngiphp\ngiphp\obj\Debug\ngiphp.vbproj.GenerateResource.Cache
+D:\nginx\ngiphp\ngiphp\obj\Debug\npmm.exe
+D:\nginx\ngiphp\ngiphp\obj\Debug\npmm.xml
+D:\nginx\ngiphp\ngiphp\obj\Debug\npmm.pdb
+D:\nginx\npmm.exe.config
+D:\nginx\npmm.exe
+D:\nginx\npmm.pdb
+D:\nginx\npmm.xml
 D:\nginx\ngiphp\ngiphp\bin\Debug\npmm.exe.config
 D:\nginx\ngiphp\ngiphp\bin\Debug\npmm.exe
 D:\nginx\ngiphp\ngiphp\bin\Debug\npmm.pdb
 D:\nginx\ngiphp\ngiphp\bin\Debug\npmm.xml
-D:\nginx\ngiphp\ngiphp\obj\Debug\npmm.exe
-D:\nginx\ngiphp\ngiphp\obj\Debug\npmm.xml
-D:\nginx\ngiphp\ngiphp\obj\Debug\npmm.pdb

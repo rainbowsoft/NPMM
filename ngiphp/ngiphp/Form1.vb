@@ -1,12 +1,11 @@
 ﻿Public Class Form1
     Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, ByVal lpsz2 As String) As Long
-    Declare Function ShowWindow Lib "user32" Alias "ShowWindow" (ByVal hWnd1 As Long, ByVal nCmdShow As String) As Long
+    Declare Function ShowWindow Lib "user32" Alias "ShowWindow" (ByVal hWnd1 As Long, ByVal nCmdShow As Long) As Long
+    Declare Auto Function FindWindow Lib "user32" (ByVal lpClassName As String, ByVal lpWindowName As String) As Integer
+
     Dim n As Process = Nothing
-
     Dim p As Process = Nothing
-
     Dim m As Process = Nothing
-
     Dim c As Process = Nothing
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -66,6 +65,7 @@
         If IsNothing(n) = False Then Process.Start("taskkill.exe", "/im nginx.exe /f")
         If IsNothing(p) = False Then Process.Start("taskkill.exe", "/im php-cgi.exe /f")
         If IsNothing(m) = False Then Process.Start("taskkill.exe", "/im mysqld.exe /f")
+        If IsNothing(c) = False Then Process.Start("taskkill.exe", "/im memcached.exe /f")
     End Sub
 
 
@@ -215,7 +215,10 @@
             'n.WaitForExit()
             Label4.Text = Label4.Text + c.Id.ToString
             Label4.ForeColor = Color.Green
-            ShowWindow(c.MainWindowHandle, 0)
+            Threading.Thread.Sleep(1000)
+            Dim hWnd
+            hWnd = FindWindow(vbNullString, TextBox4.Text + "memcached.exe")
+            ShowWindow(hWnd, 0)
         Else
             Label4.ForeColor = Color.Red
             Label4.Text = "Memcached: "
@@ -223,6 +226,5 @@
             c = Nothing
         End If
     End Sub
-
 
 End Class
