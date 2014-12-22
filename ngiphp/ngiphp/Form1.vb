@@ -48,7 +48,7 @@
                 Label2.ForeColor = Color.Red
                 Label2.Text = "PHP 5: "
                 Process.Start("taskkill.exe", "/im php-cgi.exe /f")
-                p.Kill()
+                'p.Kill()
                 p = Nothing
             End If
         Catch ex As ArgumentException
@@ -130,7 +130,7 @@
             Label3.ForeColor = Color.Red
             Label3.Text = "MySQL: "
             Process.Start("taskkill.exe", "/im php-cgi.exe /f")
-            m.Kill()
+            'm.Kill()
             m = Nothing
         End If
     End Sub
@@ -202,6 +202,8 @@
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
         Me.Show()
         Me.WindowState = FormWindowState.Normal
+        Me.TopMost = True
+        Me.TopMost = False
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
