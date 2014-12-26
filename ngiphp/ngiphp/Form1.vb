@@ -70,10 +70,13 @@
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         If UBound(Diagnostics.Process.GetProcessesByName(Diagnostics.Process.GetCurrentProcess.ProcessName)) > 0 Then
             MessageBox.Show("程序已经运行了")
             End
         End If
+        Me.NotifyIcon1.Visible = True
+
 
         Label1.Text = "Nginx: "
         Label2.Text = "PHP 5: "
