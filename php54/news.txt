@@ -1,17 +1,218 @@
 PHP                                                                        NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-12 Jun 2014, PHP 5.4.30 RC1
+22 Jan 2015 PHP 5.4.37
+- Core:
+  . Fixed bug #68710 (Use After Free Vulnerability in PHP's unserialize()).
+    (CVE-2015-0231) (Stefan Esser)
+
+- CGI:
+  . Fixed bug #68618 (out of bounds read crashes php-cgi). (CVE-2014-9427)
+    (Stas)
+
+- EXIF:
+  . Fixed bug #68799: Free called on unitialized pointer. (CVE-2015-0232) (Stas)
+
+- Fileinfo:
+  . Removed readelf.c and related code from libmagic sources
+    (Remi, Anatol)
+  . Fixed bug #68735 (fileinfo out-of-bounds memory access).
+    (Anatol)
+
+- OpenSSL:
+  . Fixed bug #55618 (use case-insensitive cert name matching).
+    (Daniel Lowrey)
+
+18 Dec 2014 PHP 5.4.36
 
 - Core:
-  . Fixed BC break introduced by patch for bug #67072. (Anatol)
+  . Upgraded crypt_blowfish to version 1.3. (Leigh)
+  . Fixed bug #68545 (NULL pointer dereference in unserialize.c). (Anatol)
+  . Fixed bug #68594 (Use after free vulnerability in unserialize()).
+    (CVE-2014-8142) (Stefan Esser)
+
+- Mcrypt:
+  . Fixed possible read after end of buffer and use after free. (Dmitry)
+
+13 Nov 2014 PHP 5.4.35
+
+- Core:
+  . Fixed bug #68365 (zend_mm_heap corrupted after memory overflow in
+    zend_hash_copy). (Dmitry)
+
+- Fileinfo:
+  . Fixed bug #68283 (fileinfo: out-of-bounds read in elf note headers).
+    (CVE-2014-3710) (Remi)
+
+- GMP:
+ . Fixed bug #63595 (GMP memory management conflicts with other libraries
+   using GMP). (Remi)
+
+- PDO_pgsql:
+  . Fixed bug #66584 (Segmentation fault on statement deallocation) (Matteo)
+
+16 Oct 2014, PHP 5.4.34
+
+- Fileinfo:
+  . Fixed bug #66242 (libmagic: don't assume char is signed). (ArdB)
+
+- Core:
+  . Fixed bug #67985 (Incorrect last used array index copied to new array after
+    unset). (Tjerk)
+  . Fixed bug #68044 (Integer overflow in unserialize() (32-bits only)). 
+    (CVE-2014-3669) (Stas)
+
+- cURL:
+  . Fixed bug #68089 (NULL byte injection - cURL lib). (Stas)
+
+- EXIF:
+  . Fixed bug #68113 (Heap corruption in exif_thumbnail()). (CVE-2014-3670)
+    (Stas)
+
+- OpenSSL:
+  . Reverted fixes for bug #41631, due to regressions. (Stas) 
+
+- XMLRPC:
+  . Fixed bug #68027 (Global buffer overflow in mkgmtime() function). 
+    (CVE-2014-3668) (Stas)
+
+18 Sep 2014, PHP 5.4.33
+
+- Core:
+  . Fixed bug #47358 (glob returns error, should be empty array()). (Pierre)
+  . Fixed bug #65463 (SIGSEGV during zend_shutdown()). (Keyur Govande)
+  . Fixed bug #66036 (Crash on SIGTERM in apache process). (Keyur Govande)
+
+- OpenSSL:
+  . Fixed bug #41631 (socket timeouts not honored in blocking SSL reads).
+    (Daniel Lowrey)
+
+- Date:
+  . Fixed bug #66091 (memory leaks in DateTime constructor). (Tjerk)
+
+- FPM:
+  . Fixed #67606 (FPM with mod_fastcgi/apache2.4 is broken). (David Zuelke)
+
+- GD:
+  . Made fontFetch's path parser thread-safe. (Sara)
+
+- Wddx:
+  . Fixed bug #67873 (Segfaults in php_wddx_serialize_var). (Anatol, Remi)
+
+- Zlib:
+  . Fixed bug #67724 (chained zlib filters silently fail with large amounts of 
+    data). (Mike)
+  . Fixed bug #67865 (internal corruption phar error). (Mike)
+
+21 Aug 2014, PHP 5.4.32
+
+- COM:
+  . Fixed missing type checks in com_event_sink. (Yussuf Khalil, Stas)
+  . Fixed bug #41577 (DOTNET is successful once per server run).
+    (Aidas Kasparas)
+
+- Fileinfo:
+  . Fixed bug #67705 (extensive backtracking in rule regular expression).
+    (CVE-2014-3538) (Remi)
+  . Fixed bug #67716 (Segfault in cdf.c). (CVE-2014-3587) (Remi)
+
+- GD:
+  . Fixed bug #66901 (php-gd 'c_color' NULL pointer dereference).
+    (CVE-2014-2497). (Remi)
+  . Fixed bug #67730 (Null byte injection possible with imagexxx functions).
+    (CVE-2014-5120) (Ryan Mauger)
+
+- LiteSpeed:
+  . Updated LiteSpeed SAPI code from V5.5 to V6.6 (George Wang)
+
+- Network:
+  . Fixed bug #67717 (segfault in dns_get_record). (CVE-2014-3597) (Remi)
+
+- Milter:
+  . Fixed bug #67715 (php-milter does not build and crashes randomly). (Mike)
+
+- OpenSSL:
+  . Fixed missing type checks in OpenSSL options (Yussuf Khalil, Stas).
+
+- Readline:
+  . Fixed bug #55496 (Interactive mode doesn't force a newline before the
+    prompt). (Bob, Johannes)
+  . Fixed bug #67496 (Save command history when exiting interactive shell
+    with control-c). (Dmitry Saprykin, Johannes)
+
+- Sessions:
+  . Fixed missing type checks in php_session_create_id. (Yussuf Khalil, Stas).
+
+- SPL:
+  . Fixed bug #67539 (ArrayIterator use-after-free due to object change during
+    sorting). (CVE-2014-4698) (research at insighti dot org, Laruence)
+  . Fixed bug #67538 (SPL Iterators use-after-free). (CVE-2014-4670) (Laruence)
+
+- Core:
+  . Fixed bug #67693 (incorrect push to the empty array) (Tjerk)
+
+- ODBC:
+  . Fixed bug #60616 (odbc_fetch_into returns junk data at end of multi-byte
+    char fields). (Keyur)
+
+- MySQLi:
+  . Fixed bug #67839 (mysqli does not handle 4-byte floats correctly). (Keyur)
+
+24 Jul 2014, PHP 5.4.31
+
+- Core:
+  . Fixed bug #67428 (header('Location: foo') will override a 308-399 response
+    code). (Adam)
+  . Fixed bug #67436 (Autoloader isn't called if two method definitions don't
+    match). (Bob)
+  . Fixed bug #67091 (make install fails to install libphp5.so on FreeBSD 10.0).
+    (Ferenc)
+  . Fixed bug #67151 (strtr with empty array crashes). (Nikita)
+  . Fixed bug #67407 (Windows 8.1/Server 2012 R2 reported as Windows 8/Server
+    2012). (Christian Wenz)
+  . Implemented FR #34407 (ucwords and Title Case). (Tjerk)
+
+- CLI server:
+  . Implemented FR #67429 (CLI server is missing some new HTTP response codes).
+    (Adam)
+  . Fixed bug #66830 (Empty header causes PHP built-in web server to hang).
+    (Adam)
+
+- FPM:
+  . Fixed bug #67530 (error_log=syslog ignored). (Remi)
+  . Fixed bug #67531 (syslog cannot be set in pool configuration). (Remi)
+
+- Intl:
+  . Fixed bug #67052 (NumberFormatter::parse() resets LC_NUMERIC setting). 
+    (Stas)
+
+- pgsql:
+  . Fixed bug #67550 (Error in code "form" instead of "from", pgsql.c, line 756),
+    which affected builds against libpq < 7.3. (Adam)
+
+- Phar:
+  . Fixed bug #67587 (Redirection loop on nginx with FPM). (Christian Weiske)
+
+- Streams:
+  . Fixed bug #67430 (http:// wrapper doesn't follow 308 redirects). (Adam)
+
+- Session:
+  . Fixed bug #66827 (Session raises E_NOTICE when session name variable is array).
+    (Yasuo)
+
+26 Jun 2014, PHP 5.4.30
+
+- Core:
+  . Fixed BC break introduced by patch for bug #67072. (Anatol, Stas)
   . Fixed bug #66622 (Closures do not correctly capture the late bound class 
     (static::) in some cases). (Levi Morrison)
   . Fixed bug #67390 (insecure temporary file use in the configure script).
     (Remi) (CVE-2014-3981)
   . Fixed bug #67399 (putenv with empty variable may lead to crash). (Stas)
+  . Fixed bug #67498 (phpinfo() Type Confusion Information Leak Vulnerability). 
+    (Stefan Esser)
 
 - CLI server:
-  . Fixed Bug #67406i (built-in web-server segfaults on startup). (Remi)
+  . Fixed Bug #67406 (built-in web-server segfaults on startup). (Remi)
 
 - Date:
   . Fixed bug #67308 (Serialize of DateTime truncates fractions of second).
@@ -21,15 +222,24 @@ PHP                                                                        NEWS
 
 - Fileinfo:
   . Fixed bug #67326 (fileinfo: cdf_read_short_sector insufficient boundary 
-    check). 
+    check). (CVE-2014-0207) 
   . Fixed bug #67410 (fileinfo: mconvert incorrect handling of truncated pascal
-    string size). (Francisco Alonso, Jan Kaluza, Remi)
+    string size). (CVE-2014-3478) (Francisco Alonso, Jan Kaluza, Remi) 
   . Fixed bug #67411 (fileinfo: cdf_check_stream_offset insufficient boundary
-    check). (Francisco Alonso, Jan Kaluza, Remi)
+    check). (CVE-2014-3479) (Francisco Alonso, Jan Kaluza, Remi)
   . Fixed bug #67412 (fileinfo: cdf_count_chain insufficient boundary check).
-    (Francisco Alonso, Jan Kaluza, Remi)
+    (CVE-2014-3480) (Francisco Alonso, Jan Kaluza, Remi)
   . Fixed bug #67413 (fileinfo: cdf_read_property_info insufficient boundary
-    check). (Francisco Alonso, Jan Kaluza, Remi)
+    check). (CVE-2014-3487) (Francisco Alonso, Jan Kaluza, Remi)
+
+- Intl:
+  . Fixed bug #67349 (Locale::parseLocale Double Free). (Stas)
+  . Fixed bug #67397 (Buffer overflow in locale_get_display_name and
+    uloc_getDisplayName (libicu 4.8.1)). (Stas)
+
+- Network:
+  . Fixed bug #67432 (Fix potential segfault in dns_get_record()). 
+    (CVE-2014-4049). (Sara)
 
 - OpenSSL:
   . Fixed bug #65698 (certificates validity parsing does not work past 2050). 
@@ -44,6 +254,8 @@ PHP                                                                        NEWS
   . Fixed bug #66127 (Segmentation fault with ArrayObject unset). (Stas)
   . Fixed bug #67359 (Segfault in recursiveDirectoryIterator). (Laruence)
   . Fixed bug #67360 (Missing element after ArrayObject::getIterator). (Adam)
+  . Fixed bug #67492 (unserialize() SPL ArrayObject / SPLObjectStorage Type 
+    Confusion) (CVE-2014-3515). (Stefan Esser)
 
 29 May 2014, PHP 5.4.29
 
