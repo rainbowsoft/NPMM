@@ -113,6 +113,7 @@
         If (p.Contains("php54") = True) Then RadioButton3.Select()
         If (p.Contains("php55") = True) Then RadioButton4.Select()
         If (p.Contains("php56") = True) Then RadioButton5.Select()
+        If (p.Contains("php70") = True) Then RadioButton6.Select()
 
     End Sub
 
@@ -232,4 +233,13 @@
         End If
     End Sub
 
+    Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
+        'TextBox2.Text = "d:\nginx\php54\"
+        'My.Settings.php = 70
+        'My.Settings.Save()
+        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
+        p = p + "\php" + "70" + "\"
+        TextBox2.Text = p
+        My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
+    End Sub
 End Class

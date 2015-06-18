@@ -32,3 +32,13 @@ D:\nginx\ngiphp\ngiphp\bin\Debug\npmm.exe.config
 D:\nginx\ngiphp\ngiphp\bin\Debug\npmm.exe
 D:\nginx\ngiphp\ngiphp\bin\Debug\npmm.pdb
 D:\nginx\ngiphp\ngiphp\bin\Debug\npmm.xml
+D:\NPMM\ngiphp\ngiphp\bin\Debug\npmm.exe.config
+D:\NPMM\ngiphp\ngiphp\obj\Debug\npmm.exe
+D:\NPMM\ngiphp\ngiphp\obj\Debug\npmm.xml
+D:\NPMM\ngiphp\ngiphp\obj\Debug\npmm.pdb
+D:\NPMM\ngiphp\ngiphp\bin\Debug\npmm.exe
+D:\NPMM\ngiphp\ngiphp\bin\Debug\npmm.pdb
+D:\NPMM\ngiphp\ngiphp\bin\Debug\npmm.xml
+D:\NPMM\ngiphp\ngiphp\obj\Debug\ngiphp.Form1.resources
+D:\NPMM\ngiphp\ngiphp\obj\Debug\ngiphp.Resources.resources
+D:\NPMM\ngiphp\ngiphp\obj\Debug\ngiphp.vbproj.GenerateResource.Cache

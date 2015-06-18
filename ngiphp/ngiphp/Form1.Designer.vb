@@ -44,6 +44,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -238,11 +239,24 @@ Partial Class Form1
         Me.Button4.Text = "启动"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'RadioButton6
+        '
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.Location = New System.Drawing.Point(262, 179)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(41, 16)
+        Me.RadioButton6.TabIndex = 17
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.Tag = "1"
+        Me.RadioButton6.Text = "7.0"
+        Me.RadioButton6.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(446, 407)
+        Me.Controls.Add(Me.RadioButton6)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label4)
@@ -289,5 +303,6 @@ Partial Class Form1
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
 
 End Class
