@@ -46,7 +46,7 @@
             Else
 
                 Label2.ForeColor = Color.Red
-                Label2.Text = "PHP 5: "
+                Label2.Text = "PHP: "
                 Process.Start("taskkill.exe", "/im php-cgi.exe /f")
                 'p.Kill()
                 p = Nothing
@@ -79,7 +79,7 @@
 
 
         Label1.Text = "Nginx: "
-        Label2.Text = "PHP 5: "
+        Label2.Text = "PHP: "
         Label3.Text = "MySQL: "
         Label4.Text = "Memcached: "
         'Select Case My.Settings.php
