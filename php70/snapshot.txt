@@ -1,7 +1,7 @@
 This snapshot was automatically generated on
-Fri, 12 Jun 2015 19:07:18 +0000
+Thu, 23 Jul 2015 20:39:36 +0000
 
-Version: 7.0.0alpha1
+Version: 7.0.0beta2
 Branch: HEAD
 Build: C:\php-sdk\php70dev\vc14\x86\obj\Release
 
@@ -35,7 +35,6 @@ xml
 wddx
 xmlreader
 xmlwriter
-mhash
 
 
 Dependency information:
@@ -265,8 +264,8 @@ Module: php_ldap.dll
 	api-ms-win-crt-heap-l1-1-0.dll
 	api-ms-win-crt-string-l1-1-0.dll
 	api-ms-win-crt-time-l1-1-0.dll
-	api-ms-win-crt-utility-l1-1-0.dll
 	api-ms-win-crt-convert-l1-1-0.dll
+	api-ms-win-crt-utility-l1-1-0.dll
 	api-ms-win-crt-environment-l1-1-0.dll
 	ssleay32.dll
 	libeay32.dll
@@ -279,6 +278,15 @@ Module: php_mbstring.dll
 	api-ms-win-crt-runtime-l1-1-0.dll
 	api-ms-win-crt-string-l1-1-0.dll
 	api-ms-win-crt-convert-l1-1-0.dll
+
+Module: php_oci8_12c.dll
+===========================
+	vcruntime140.dll
+	api-ms-win-crt-stdio-l1-1-0.dll
+	api-ms-win-crt-runtime-l1-1-0.dll
+	api-ms-win-crt-heap-l1-1-0.dll
+	api-ms-win-crt-time-l1-1-0.dll
+	api-ms-win-crt-string-l1-1-0.dll
 
 Module: php_odbc.dll
 ===========================
@@ -414,6 +422,7 @@ Module: php_pdo_mysql.dll
 Module: php_pdo_oci.dll
 ===========================
 	vcruntime140.dll
+	api-ms-win-crt-stdio-l1-1-0.dll
 	api-ms-win-crt-runtime-l1-1-0.dll
 	api-ms-win-crt-heap-l1-1-0.dll
 	api-ms-win-crt-string-l1-1-0.dll
@@ -456,16 +465,6 @@ Module: php_soap.dll
 	api-ms-win-crt-convert-l1-1-0.dll
 	api-ms-win-crt-filesystem-l1-1-0.dll
 	api-ms-win-crt-math-l1-1-0.dll
-
-Module: php_xmlrpc.dll
-===========================
-	vcruntime140.dll
-	api-ms-win-crt-stdio-l1-1-0.dll
-	api-ms-win-crt-runtime-l1-1-0.dll
-	api-ms-win-crt-heap-l1-1-0.dll
-	api-ms-win-crt-convert-l1-1-0.dll
-	api-ms-win-crt-string-l1-1-0.dll
-	api-ms-win-crt-time-l1-1-0.dll
 
 Module: php_xsl.dll
 ===========================
