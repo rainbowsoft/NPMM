@@ -29,7 +29,7 @@ $opt_port=0;
 $exit_status=0;
 
 GetOptions(
-  "e|engine|type=s"       => \$opt_type,
+  "e|engine|type=s"       => \$opt_engine,
   "f|force"               => \$opt_force,
   "help|?"               => \$opt_help,
   "h|host=s"              => \$opt_host,
@@ -125,7 +125,7 @@ sub usage
 
   print <<EOF;
 
-Conversion of a MySQL tables to other storage engines
+Conversion of a MariaDB tables to other storage engines
 
  Usage: $0 database [table[ table ...]]
  If no tables has been specifed, all tables in the database will be converted.
