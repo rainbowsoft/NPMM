@@ -23,7 +23,7 @@
         Else
             Label1.ForeColor = Color.Red
             Label1.Text = "Nginx: "
-            Process.Start("taskkill", "/im nginx.exe /f")
+            Process.Start("taskkill.exe", "/im nginx.exe /f")
             n = Nothing
         End If
     End Sub
@@ -47,7 +47,7 @@
 
                 Label2.ForeColor = Color.Red
                 Label2.Text = "PHP: "
-                Process.Start("taskkill.exe", "/im php-cgi.exe /f")
+                Process.Start("taskkill.exe", "/pid " & p.Id & " /f")
                 'p.Kill()
                 p = Nothing
             End If
@@ -60,12 +60,60 @@
 
 
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If IsNothing(m) = True Then
+
+            m = New Process
+            m.StartInfo.FileName = "mysqld.exe"
+            m.StartInfo.WorkingDirectory = TextBox3.Text
+            m.StartInfo.CreateNoWindow = True
+            m.StartInfo.Arguments = "--defaults-file=" + TextBox3.Text + "my.ini  --standalone --console" '--standalone
+            m.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            m.Start()
+
+            Label3.Text = Label3.Text + m.Id.ToString
+            Label3.ForeColor = Color.Green
+        Else
+            Label3.ForeColor = Color.Red
+            Label3.Text = "MySQL: "
+            Process.Start("taskkill.exe", "/pid " & m.Id & " /f")
+            'm.Kill()
+            m = Nothing
+        End If
+    End Sub
+
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If IsNothing(c) = True Then
+            c = New Process
+            c.StartInfo.FileName = "memcached.exe"
+            c.StartInfo.WorkingDirectory = TextBox4.Text
+            'n.StartInfo.CreateNoWindow = True
+            c.StartInfo.Arguments = ""
+            c.Start()
+            'n.WaitForExit()
+            Label4.Text = Label4.Text + c.Id.ToString
+            Label4.ForeColor = Color.Green
+            Threading.Thread.Sleep(1000)
+            Dim hWnd
+            hWnd = FindWindow(vbNullString, TextBox4.Text + "memcached.exe")
+            ShowWindow(hWnd, 0)
+        Else
+            Label4.ForeColor = Color.Red
+            Label4.Text = "Memcached: "
+            Process.Start("taskkill.exe", "/pid " & c.Id & " /f")
+            c = Nothing
+        End If
+    End Sub
+
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+
         If IsNothing(n) = False Then Process.Start("taskkill.exe", "/im nginx.exe /f")
-        If IsNothing(p) = False Then Process.Start("taskkill.exe", "/im php-cgi.exe /f")
-        If IsNothing(m) = False Then Process.Start("taskkill.exe", "/im mysqld.exe /f")
-        If IsNothing(c) = False Then Process.Start("taskkill.exe", "/im memcached.exe /f")
+        If IsNothing(p) = False Then Process.Start("taskkill.exe", "/pid " & p.Id & " /f")
+        If IsNothing(m) = False Then Process.Start("taskkill.exe", "/pid " & m.Id & " /f")
+        If IsNothing(c) = False Then Process.Start("taskkill.exe", "/pid " & c.Id & " /f")
+
     End Sub
 
 
@@ -116,29 +164,6 @@
         If (p.Contains("php70") = True) Then RadioButton6.Select()
 
     End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If IsNothing(m) = True Then
-
-            m = New Process
-            m.StartInfo.FileName = "mysqld.exe"
-            m.StartInfo.WorkingDirectory = TextBox3.Text
-            m.StartInfo.CreateNoWindow = True
-            m.StartInfo.Arguments = "--defaults-file=" + TextBox3.Text + "my.ini --standalone"
-            m.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
-            m.Start()
-
-            Label3.Text = Label3.Text + m.Id.ToString
-            Label3.ForeColor = Color.Green
-        Else
-            Label3.ForeColor = Color.Red
-            Label3.Text = "MySQL: "
-            Process.Start("taskkill.exe", "/im php-cgi.exe /f")
-            'm.Kill()
-            m = Nothing
-        End If
-    End Sub
-
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         'TextBox2.Text = "d:\nginx\php52\"
@@ -210,28 +235,6 @@
         Me.TopMost = False
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        If IsNothing(c) = True Then
-            c = New Process
-            c.StartInfo.FileName = "memcached.exe"
-            c.StartInfo.WorkingDirectory = TextBox4.Text
-            'n.StartInfo.CreateNoWindow = True
-            c.StartInfo.Arguments = ""
-            c.Start()
-            'n.WaitForExit()
-            Label4.Text = Label4.Text + c.Id.ToString
-            Label4.ForeColor = Color.Green
-            Threading.Thread.Sleep(1000)
-            Dim hWnd
-            hWnd = FindWindow(vbNullString, TextBox4.Text + "memcached.exe")
-            ShowWindow(hWnd, 0)
-        Else
-            Label4.ForeColor = Color.Red
-            Label4.Text = "Memcached: "
-            Process.Start("taskkill", "/im memcached.exe /f")
-            c = Nothing
-        End If
-    End Sub
 
     Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
         'TextBox2.Text = "d:\nginx\php54\"

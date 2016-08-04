@@ -42,3 +42,4 @@ D:\NPMM\ngiphp\ngiphp\bin\Debug\npmm.xml
 D:\NPMM\ngiphp\ngiphp\obj\Debug\ngiphp.Form1.resources
 D:\NPMM\ngiphp\ngiphp\obj\Debug\ngiphp.Resources.resources
 D:\NPMM\ngiphp\ngiphp\obj\Debug\ngiphp.vbproj.GenerateResource.Cache
+D:\NPMM\ngiphp\ngiphp\obj\Debug\ngiphp.vbprojResolveAssemblyReference.cache
