@@ -2,7 +2,7 @@
 
 gzip
 
-root C:\inetpub\zblogphp
+root /NPMM/htdocs
 
 ext .html .htm .php   # Clean URLs
 errors {
