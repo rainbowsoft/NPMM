@@ -8,6 +8,7 @@
     Dim m As Process = Nothing
     Dim c As Process = Nothing
     Dim a As Process = Nothing
+    Dim h As Process = Nothing
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If IsNothing(n) = True Then
@@ -58,7 +59,6 @@
 
         End Try
     End Sub
-
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -129,6 +129,40 @@
     End Sub
 
 
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Try
+            If IsNothing(h) = True Then
+
+                Dim h1 = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\h1.txt")
+                Dim h2 = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\h2.txt")
+
+                h = New Process
+                h.StartInfo.FileName = "php.exe"
+                h.StartInfo.WorkingDirectory = TextBox6.Text
+                h.StartInfo.CreateNoWindow = True
+                h.StartInfo.Arguments = "-S 127.0.0.1:" & h1 & " -t " & h2
+                h.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+                h.Start()
+
+                Label6.Text = Label6.Text + h.Id.ToString
+                Label6.ForeColor = Color.Green
+            Else
+
+                Label6.ForeColor = Color.Red
+                Label6.Text = "PHP Server: "
+                Process.Start("taskkill.exe", "/pid " & h.Id & " /f")
+                'h.Kill()
+                h = Nothing
+            End If
+        Catch ex As ArgumentException
+            h = Nothing
+        Finally
+
+        End Try
+    End Sub
+
+
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
 
         If IsNothing(n) = False Then Process.Start("taskkill.exe", "/im nginx.exe /f")
@@ -136,6 +170,7 @@
         If IsNothing(m) = False Then Process.Start("taskkill.exe", "/pid " & m.Id & " /f")
         If IsNothing(c) = False Then Process.Start("taskkill.exe", "/pid " & c.Id & " /f")
         If IsNothing(a) = False Then Process.Start("taskkill.exe", "/pid " & a.Id & " /f")
+        If IsNothing(h) = False Then Process.Start("taskkill.exe", "/pid " & h.Id & " /f")
 
     End Sub
 
@@ -154,6 +189,7 @@
         Label3.Text = "MySQL: "
         Label4.Text = "Memcached: "
         Label5.Text = "Caddy: "
+        Label6.Text = "PHP Server: "
         'Select Case My.Settings.php
         '    Case 52
         '        RadioButton1.Select()
@@ -177,11 +213,17 @@
 
         Dim a = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\a.txt")
 
+        Dim h = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\h.txt")
+
+        Dim s = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\s.txt")
+        s = LCase(s)
+
         TextBox1.Text = d
         TextBox2.Text = p
         TextBox3.Text = m
         TextBox4.Text = c
         TextBox5.Text = a
+        TextBox6.Text = h
 
         If (p.Contains("php52") = True) Then RadioButton1.Select()
         If (p.Contains("php53") = True) Then RadioButton2.Select()
@@ -189,6 +231,16 @@
         If (p.Contains("php55") = True) Then RadioButton4.Select()
         If (p.Contains("php56") = True) Then RadioButton5.Select()
         If (p.Contains("php70") = True) Then RadioButton6.Select()
+
+        If s = "nginx" Then
+            TabControl1.SelectedTab = TabPage1
+        End If
+        If s = "caddy" Then
+            TabControl1.SelectedTab = TabPage2
+        End If
+        If s = "php" Then
+            TabControl1.SelectedTab = TabPage3
+        End If
 
     End Sub
 
@@ -271,6 +323,5 @@
         Me.TopMost = True
         Me.TopMost = False
     End Sub
-
 
 End Class

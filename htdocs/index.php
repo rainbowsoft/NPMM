@@ -1,4 +1,4 @@
-<h1>HPMM</h1>
+<h1>NPMM</h1>
 <hr/>
 <a href="/phpMyAdmin/">phpMyAdmin</a>
 <hr/>

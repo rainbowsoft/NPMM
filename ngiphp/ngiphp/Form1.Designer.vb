@@ -24,13 +24,10 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
@@ -45,47 +42,41 @@ Partial Class Form1
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(336, 59)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "启动"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(336, 150)
+        Me.Button2.Location = New System.Drawing.Point(343, 186)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "启动"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("宋体", 32.0!)
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(20, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(151, 43)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Label1"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("宋体", 32.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(20, 106)
+        Me.Label2.Location = New System.Drawing.Point(27, 142)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(151, 43)
         Me.Label2.TabIndex = 3
@@ -96,7 +87,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("宋体", 32.0!)
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(20, 211)
+        Me.Label3.Location = New System.Drawing.Point(27, 247)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(151, 43)
         Me.Label3.TabIndex = 4
@@ -104,24 +95,16 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(336, 257)
+        Me.Button3.Location = New System.Drawing.Point(343, 293)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 5
         Me.Button3.Text = "启动"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(29, 61)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(301, 21)
-        Me.TextBox1.TabIndex = 6
-        Me.TextBox1.Text = "d:\nginx\"
-        '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(29, 152)
+        Me.TextBox2.Location = New System.Drawing.Point(36, 188)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(301, 21)
         Me.TextBox2.TabIndex = 7
@@ -129,7 +112,7 @@ Partial Class Form1
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(29, 259)
+        Me.TextBox3.Location = New System.Drawing.Point(36, 295)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(301, 21)
         Me.TextBox3.TabIndex = 8
@@ -138,7 +121,7 @@ Partial Class Form1
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(29, 180)
+        Me.RadioButton1.Location = New System.Drawing.Point(36, 216)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(41, 16)
         Me.RadioButton1.TabIndex = 9
@@ -150,7 +133,7 @@ Partial Class Form1
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(76, 180)
+        Me.RadioButton2.Location = New System.Drawing.Point(83, 216)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(41, 16)
         Me.RadioButton2.TabIndex = 10
@@ -162,7 +145,7 @@ Partial Class Form1
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(123, 179)
+        Me.RadioButton3.Location = New System.Drawing.Point(130, 215)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(41, 16)
         Me.RadioButton3.TabIndex = 11
@@ -174,7 +157,7 @@ Partial Class Form1
         'RadioButton4
         '
         Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(170, 179)
+        Me.RadioButton4.Location = New System.Drawing.Point(177, 215)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(41, 16)
         Me.RadioButton4.TabIndex = 12
@@ -186,7 +169,7 @@ Partial Class Form1
         'RadioButton5
         '
         Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(217, 179)
+        Me.RadioButton5.Location = New System.Drawing.Point(224, 215)
         Me.RadioButton5.Name = "RadioButton5"
         Me.RadioButton5.Size = New System.Drawing.Size(41, 16)
         Me.RadioButton5.TabIndex = 13
@@ -219,7 +202,7 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("宋体", 32.0!)
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(21, 297)
+        Me.Label4.Location = New System.Drawing.Point(28, 333)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(151, 43)
         Me.Label4.TabIndex = 14
@@ -227,7 +210,7 @@ Partial Class Form1
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(29, 345)
+        Me.TextBox4.Location = New System.Drawing.Point(36, 381)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(301, 21)
         Me.TextBox4.TabIndex = 16
@@ -235,7 +218,7 @@ Partial Class Form1
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(336, 343)
+        Me.Button4.Location = New System.Drawing.Point(343, 379)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 15
@@ -245,7 +228,7 @@ Partial Class Form1
         'RadioButton6
         '
         Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Location = New System.Drawing.Point(264, 179)
+        Me.RadioButton6.Location = New System.Drawing.Point(271, 215)
         Me.RadioButton6.Name = "RadioButton6"
         Me.RadioButton6.Size = New System.Drawing.Size(41, 16)
         Me.RadioButton6.TabIndex = 17
@@ -254,20 +237,85 @@ Partial Class Form1
         Me.RadioButton6.Text = "7.0"
         Me.RadioButton6.UseVisualStyleBackColor = True
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(437, 127)
+        Me.TabControl1.TabIndex = 21
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.TextBox1)
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(429, 101)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Nginx"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(20, 50)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(301, 21)
+        Me.TextBox1.TabIndex = 9
+        Me.TextBox1.Text = "d:\nginx\"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("宋体", 32.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(11, 5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(151, 43)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Label1"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(327, 48)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "启动"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.TextBox5)
+        Me.TabPage2.Controls.Add(Me.Button5)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(429, 101)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Caddy"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(29, 436)
+        Me.TextBox5.Location = New System.Drawing.Point(20, 50)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(301, 21)
-        Me.TextBox5.TabIndex = 20
+        Me.TextBox5.TabIndex = 23
         Me.TextBox5.Text = "d:\xampp\mysql\bin\"
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(336, 434)
+        Me.Button5.Location = New System.Drawing.Point(327, 48)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 19
+        Me.Button5.TabIndex = 22
         Me.Button5.Text = "启动"
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -276,20 +324,59 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("宋体", 32.0!)
         Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(21, 388)
+        Me.Label5.Location = New System.Drawing.Point(11, 5)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(151, 43)
-        Me.Label5.TabIndex = 18
+        Me.Label5.TabIndex = 21
         Me.Label5.Text = "Label5"
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.TextBox6)
+        Me.TabPage3.Controls.Add(Me.Button6)
+        Me.TabPage3.Controls.Add(Me.Label6)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(429, 101)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "PHP Server"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(20, 50)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(301, 21)
+        Me.TextBox6.TabIndex = 26
+        Me.TextBox6.Text = "d:\xampp\mysql\bin\"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(327, 48)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 25
+        Me.Button6.Text = "启动"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("宋体", 32.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(11, 5)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(151, 43)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "Label6"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(433, 493)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Label5)
+        Me.ClientSize = New System.Drawing.Size(482, 456)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.RadioButton6)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Button4)
@@ -301,29 +388,30 @@ Partial Class Form1
         Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "Nginx+PHP+MySQL管理器"
         Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
@@ -339,7 +427,17 @@ Partial Class Form1
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents Button5 As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Label6 As Label
 End Class
