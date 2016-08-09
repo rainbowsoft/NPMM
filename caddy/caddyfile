@@ -1,0 +1,18 @@
+127.0.0.1:8080  # Your site's address
+
+gzip
+
+root C:\inetpub\zblogphp
+
+ext .html .htm .php   # Clean URLs
+errors {
+    log errors.log    # Error log
+    404 error-404.html   # Custom error page
+}
+
+fastcgi / 127.0.0.1:9000 php   # PHP backend
+
+rewrite {
+    if {path} not_match ^\/zb_system
+    to {path} {path}/ /index.php?_url={uri}
+}

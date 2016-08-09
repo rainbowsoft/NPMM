@@ -1,0 +1,1 @@
+2016/08/09 17:20:58 [error] 3640#9648: *1 CreateFile() "C:/inetpub/zblogphp/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"

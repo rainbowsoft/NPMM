@@ -45,6 +45,9 @@ Partial Class Form1
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -251,11 +254,42 @@ Partial Class Form1
         Me.RadioButton6.Text = "7.0"
         Me.RadioButton6.UseVisualStyleBackColor = True
         '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(29, 436)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(301, 21)
+        Me.TextBox5.TabIndex = 20
+        Me.TextBox5.Text = "d:\xampp\mysql\bin\"
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(336, 434)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 19
+        Me.Button5.Text = "启动"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("宋体", 32.0!)
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.Location = New System.Drawing.Point(21, 388)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(151, 43)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Label5"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(446, 407)
+        Me.ClientSize = New System.Drawing.Size(433, 493)
+        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.RadioButton6)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Button4)
@@ -274,6 +308,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "Nginx+PHP+MySQL管理器"
@@ -304,5 +339,7 @@ Partial Class Form1
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
-
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label5 As Label
 End Class

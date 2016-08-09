@@ -7,6 +7,7 @@
     Dim p As Process = Nothing
     Dim m As Process = Nothing
     Dim c As Process = Nothing
+    Dim a As Process = Nothing
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If IsNothing(n) = True Then
@@ -106,6 +107,27 @@
         End If
     End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If IsNothing(a) = True Then
+            a = New Process
+            a.StartInfo.FileName = "caddy.exe"
+            a.StartInfo.WorkingDirectory = TextBox5.Text
+            a.StartInfo.CreateNoWindow = True
+            a.StartInfo.Arguments = ""
+            a.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            a.Start()
+            'n.WaitForExit()
+            Label5.Text = Label5.Text + a.Id.ToString
+            Label5.ForeColor = Color.Green
+
+        Else
+            Label5.ForeColor = Color.Red
+            Label5.Text = "Caddy: "
+            Process.Start("taskkill.exe", "/pid " & a.Id & " /f")
+            a = Nothing
+        End If
+    End Sub
+
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
 
@@ -113,6 +135,7 @@
         If IsNothing(p) = False Then Process.Start("taskkill.exe", "/pid " & p.Id & " /f")
         If IsNothing(m) = False Then Process.Start("taskkill.exe", "/pid " & m.Id & " /f")
         If IsNothing(c) = False Then Process.Start("taskkill.exe", "/pid " & c.Id & " /f")
+        If IsNothing(a) = False Then Process.Start("taskkill.exe", "/pid " & a.Id & " /f")
 
     End Sub
 
@@ -130,6 +153,7 @@
         Label2.Text = "PHP: "
         Label3.Text = "MySQL: "
         Label4.Text = "Memcached: "
+        Label5.Text = "Caddy: "
         'Select Case My.Settings.php
         '    Case 52
         '        RadioButton1.Select()
@@ -151,10 +175,13 @@
 
         Dim c = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\c.txt")
 
+        Dim a = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\a.txt")
+
         TextBox1.Text = d
         TextBox2.Text = p
         TextBox3.Text = m
         TextBox4.Text = c
+        TextBox5.Text = a
 
         If (p.Contains("php52") = True) Then RadioButton1.Select()
         If (p.Contains("php53") = True) Then RadioButton2.Select()
@@ -216,6 +243,16 @@
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
     End Sub
 
+    Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
+        'TextBox2.Text = "d:\nginx\php54\"
+        'My.Settings.php = 70
+        'My.Settings.Save()
+        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
+        p = p + "\php" + "70" + "\"
+        TextBox2.Text = p
+        My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
+    End Sub
+
     Private Sub 退出ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 退出ToolStripMenuItem.Click
         Me.Close()
     End Sub
@@ -236,13 +273,4 @@
     End Sub
 
 
-    Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
-        'TextBox2.Text = "d:\nginx\php54\"
-        'My.Settings.php = 70
-        'My.Settings.Save()
-        Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
-        p = p + "\php" + "70" + "\"
-        TextBox2.Text = p
-        My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
-    End Sub
 End Class
