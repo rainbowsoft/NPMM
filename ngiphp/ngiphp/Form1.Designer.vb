@@ -245,7 +245,7 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(437, 127)
+        Me.TabControl1.Size = New System.Drawing.Size(429, 127)
         Me.TabControl1.TabIndex = 21
         '
         'TabPage1
@@ -256,7 +256,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(429, 101)
+        Me.TabPage1.Size = New System.Drawing.Size(421, 101)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Nginx"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -375,7 +375,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(482, 456)
+        Me.ClientSize = New System.Drawing.Size(452, 456)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.RadioButton6)
         Me.Controls.Add(Me.TextBox4)

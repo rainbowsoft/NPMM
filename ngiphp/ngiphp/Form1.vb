@@ -136,6 +136,8 @@
 
                 Dim h1 = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\h1.txt")
                 Dim h2 = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\h2.txt")
+                If (h1.Substring(0, 1) = "/" Or h1.Substring(0, 1) = "\") Then h1 = My.Application.Info.DirectoryPath.Substring(0, 2) & h1
+                If (h2.Substring(0, 1) = "/" Or h2.Substring(0, 1) = "\") Then h2 = My.Application.Info.DirectoryPath.Substring(0, 2) & h2
 
                 h = New Process
                 h.StartInfo.FileName = "php.exe"
@@ -204,16 +206,22 @@
         'End Select
 
         Dim d = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\d.txt")
+        If (d.Substring(0, 1) = "/" Or d.Substring(0, 1) = "\") Then d = My.Application.Info.DirectoryPath.Substring(0, 2) & d
 
         Dim p = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\p.txt")
+        If (p.Substring(0, 1) = "/" Or p.Substring(0, 1) = "\") Then p = My.Application.Info.DirectoryPath.Substring(0, 2) & p
 
         Dim m = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\m.txt")
+        If (m.Substring(0, 1) = "/" Or m.Substring(0, 1) = "\") Then m = My.Application.Info.DirectoryPath.Substring(0, 2) & m
 
         Dim c = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\c.txt")
+        If (c.Substring(0, 1) = "/" Or c.Substring(0, 1) = "\") Then c = My.Application.Info.DirectoryPath.Substring(0, 2) & c
 
         Dim a = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\a.txt")
+        If (a.Substring(0, 1) = "/" Or a.Substring(0, 1) = "\") Then a = My.Application.Info.DirectoryPath.Substring(0, 2) & a
 
         Dim h = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\h.txt")
+        If (h.Substring(0, 1) = "/" Or h.Substring(0, 1) = "\") Then h = My.Application.Info.DirectoryPath.Substring(0, 2) & h
 
         Dim s = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\s.txt")
         s = LCase(s)
@@ -245,63 +253,50 @@
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
-        'TextBox2.Text = "d:\nginx\php52\"
-        'My.Settings.php = 52
-        'My.Settings.Save()
-
         Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "52" + "\"
         TextBox2.Text = p
+        p = p.Substring(2)
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
-        'TextBox2.Text = "d:\nginx\php53\"
-        'My.Settings.php = 53
-        'My.Settings.Save()
         Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "53" + "\"
         TextBox2.Text = p
+        p = p.Substring(2)
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
     End Sub
 
     Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
-        'TextBox2.Text = "d:\nginx\php54\"
-        'My.Settings.php = 54
-        'My.Settings.Save()
         Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "54" + "\"
         TextBox2.Text = p
+        p = p.Substring(2)
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
     End Sub
 
     Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
-        'TextBox2.Text = "d:\nginx\php55\"
-        'My.Settings.php = 55
-        'My.Settings.Save()
         Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "55" + "\"
         TextBox2.Text = p
+        p = p.Substring(2)
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
     End Sub
 
     Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
-        'TextBox2.Text = "d:\nginx\php56\"
-        'My.Settings.php = 56
-        'My.Settings.Save()
         Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "56" + "\"
         TextBox2.Text = p
+        p = p.Substring(2)
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
     End Sub
 
     Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
-        'TextBox2.Text = "d:\nginx\php54\"
-        'My.Settings.php = 70
-        'My.Settings.Save()
         Dim p = My.Computer.FileSystem.GetDirectoryInfo(My.Application.Info.DirectoryPath).FullName
         p = p + "\php" + "70" + "\"
         TextBox2.Text = p
+        p = p.Substring(2)
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\p.txt", p, False)
     End Sub
 

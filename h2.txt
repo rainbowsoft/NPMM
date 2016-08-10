@@ -1,1 +1,1 @@
-﻿D:\inetpub\htdocs
+﻿\NPMM\htdocs
