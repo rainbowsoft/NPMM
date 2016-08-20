@@ -55,6 +55,7 @@ Partial Class Form1
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -297,7 +298,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(429, 101)
+        Me.TabPage2.Size = New System.Drawing.Size(421, 101)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Caddy"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -338,7 +339,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(429, 101)
+        Me.TabPage3.Size = New System.Drawing.Size(421, 101)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "PHP Server"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -371,11 +372,22 @@ Partial Class Form1
         Me.Label6.TabIndex = 24
         Me.Label6.Text = "Label6"
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(36, 422)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(381, 28)
+        Me.Button7.TabIndex = 22
+        Me.Button7.Text = "启动 Appcheck"
+        Me.Button7.UseVisualStyleBackColor = True
+        Me.Button7.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(452, 456)
+        Me.ClientSize = New System.Drawing.Size(452, 462)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.RadioButton6)
         Me.Controls.Add(Me.TextBox4)
@@ -440,4 +452,5 @@ Partial Class Form1
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Label6 As Label
+    Friend WithEvents Button7 As Button
 End Class

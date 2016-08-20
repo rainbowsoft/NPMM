@@ -9,6 +9,21 @@
     Dim c As Process = Nothing
     Dim a As Process = Nothing
     Dim h As Process = Nothing
+    Dim k As Process = Nothing
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        If IsNothing(k) = True Then
+            k = New Process
+            k.StartInfo.FileName = "AppChecker.exe"
+            k.StartInfo.WorkingDirectory = My.Application.Info.DirectoryPath & "\appcheck\"
+            k.StartInfo.CreateNoWindow = True
+            k.Start()
+        Else
+            Process.Start("taskkill.exe", "/pid " & k.Id & " /f")
+            k = Nothing
+        End If
+    End Sub
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If IsNothing(n) = True Then
@@ -173,6 +188,7 @@
         If IsNothing(c) = False Then Process.Start("taskkill.exe", "/pid " & c.Id & " /f")
         If IsNothing(a) = False Then Process.Start("taskkill.exe", "/pid " & a.Id & " /f")
         If IsNothing(h) = False Then Process.Start("taskkill.exe", "/pid " & h.Id & " /f")
+        If IsNothing(k) = False Then Process.Start("taskkill.exe", "/pid " & k.Id & " /f")
 
     End Sub
 
@@ -225,6 +241,10 @@
 
         Dim s = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath() + "\s.txt")
         s = LCase(s)
+
+        If My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath() + "\k.txt") = True Then
+            Button7.Visible = True
+        End If
 
         TextBox1.Text = d
         TextBox2.Text = p
@@ -317,6 +337,18 @@
         Me.WindowState = FormWindowState.Normal
         Me.TopMost = True
         Me.TopMost = False
+    End Sub
+
+    Private Sub TabControl1_Selected(sender As Object, e As TabControlEventArgs) Handles TabControl1.Selected
+        If TabControl1.SelectedTab.Text = "Nginx" Then
+            My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\s.txt", "Nginx", False)
+        End If
+        If TabControl1.SelectedTab.Text = "Caddy" Then
+            My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\s.txt", "Caddy", False)
+        End If
+        If TabControl1.SelectedTab.Text = "PHP Server" Then
+            My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath() + "\s.txt", "PHP", False)
+        End If
     End Sub
 
 End Class
